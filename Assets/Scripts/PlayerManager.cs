@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public Animator animator;
@@ -9,6 +9,9 @@ public class PlayerManager : MonoBehaviour
     public float speed = 2;
     public int maxHealth = 100;
     public int currentHealth;
+    Image healthBar;
+    float barWidth, barHeight;
+    float healthCurrentBar;
     void Awake(){
         _inputActions = new InputController();
     }
@@ -21,7 +24,12 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<Image>();
         currentHealth = maxHealth;
+        barWidth =  healthBar.rectTransform.sizeDelta.x;
+        barHeight =  healthBar.rectTransform.sizeDelta.y;
+
+        healthCurrentBar = barWidth;
     }
 
     void Update()
@@ -72,11 +80,11 @@ public class PlayerManager : MonoBehaviour
             //hurt aniation
             if(currentHealth <= 0){
                 die();
-                //healthBar.rectTransform.sizeDelta = new Vector2(0, barHeight);
-            }//else{
-                //healthCurrentBar = (currentHealth * barWidth) / maxHealth;
-                //healthBar.rectTransform.sizeDelta = new Vector2(healthCurrentBar, barHeight);
-            //}
+                healthBar.rectTransform.sizeDelta = new Vector2(0, barHeight);
+            }else{
+                healthCurrentBar = (currentHealth * barWidth) / maxHealth;
+                healthBar.rectTransform.sizeDelta = new Vector2(healthCurrentBar, barHeight);
+            }
         }
     void die(){
             GetComponent<Collider2D>().enabled = false; 

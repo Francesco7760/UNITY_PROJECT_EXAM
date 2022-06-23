@@ -10,6 +10,13 @@ TagManager:
   - AttackPoint4
   - Enemy1
   - Enemy2
+  - Money
+  - Life
+  - Food
+  - Soda
+  - HealthBar
+  - Score
+  - HighScore
   layers:
   - Default
   - TransparentFX
