@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - SpawnPoint
+  - Templates
+  - RoomsData
+  - FloorRandomTile
   - AttackPoint1
   - AttackPoint2
   - AttackPoint3
