@@ -8,6 +8,19 @@ TagManager:
   - Templates
   - RoomsData
   - FloorRandomTile
+  - AttackPoint1
+  - AttackPoint2
+  - AttackPoint3
+  - AttackPoint4
+  - Enemy1
+  - Enemy2
+  - Money
+  - Life
+  - Food
+  - Soda
+  - HealthBar
+  - Score
+  - HighScore
   layers:
   - Default
   - TransparentFX
@@ -17,7 +30,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Enemy
   - Player
   - 
   - Map
@@ -44,4 +57,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 64366455
+    locked: 0
+  - name: Items
+    uniqueID: 4220240701
+    locked: 0
+  - name: Player
+    uniqueID: 2755200385
+    locked: 0
+  - name: Units
+    uniqueID: 1509522759
     locked: 0
