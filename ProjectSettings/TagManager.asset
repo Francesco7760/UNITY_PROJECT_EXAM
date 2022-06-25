@@ -21,6 +21,8 @@ TagManager:
   - HealthBar
   - Score
   - HighScore
+  - Exit
+  - Compass
   layers:
   - Default
   - TransparentFX

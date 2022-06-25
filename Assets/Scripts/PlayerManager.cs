@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public float speed = 2;
     public int maxHealth = 100;
     public int currentHealth;
+    public int money;
     Image healthBar;
     float barWidth, barHeight;
     float healthCurrentBar;
@@ -116,5 +117,35 @@ public class PlayerManager : MonoBehaviour
             GetComponent<Collider2D>().enabled = false; 
             this.gameObject.SetActive(false);
                     }
+    private void OnTriggerEnter2D(Collider2D other){
+        if (other.tag == "Exit")     //se incontro l'EXIT, allora cambia livello (con un delay di 1 secondo)
+        {
+           Debug.Log("exit trigger");
+           //SceneManager.LoadScene("SampleScene2");
+        }
+        else if (other.tag == "Food")    //se incontro il FOOD, aumenta la vita di 10
+        {
+            Debug.Log("food trigger");
+            if(currentHealth + 10 < maxHealth){
+                other.gameObject.SetActive(false);
+                ScoreScript.instance.addPointFood();
+                currentHealth += 10;}
+        }
+        else if (other.tag == "Soda")    
+        {
+            Debug.Log("soda trigger");
+            other.gameObject.SetActive(false);
+            ScoreScript.instance.addPointSoda();
+            // update attack score
+        }
+        else if(other.tag == "Life"){ //se incontro la Life, aumenta la vita di 20
+            if(currentHealth + 20 < maxHealth){
+                other.gameObject.SetActive(false);
+                currentHealth += 20;}
+        }
+        else if(other.tag == "Money"){
+            money += 1;
+        }
+    }                  
 
 }
