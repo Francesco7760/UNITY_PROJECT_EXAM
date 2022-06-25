@@ -35,5 +35,7 @@ public class MapManager : MonoBehaviour
     {   
         for (int x=0 ; x<roomsData.GetComponent<RoomsData>().positions.Count;x++ )
         this.roomsData.GetComponent<RoomsData>().SpawnStuffs(roomsData.GetComponent<RoomsData>().positions[x],GameObject.FindGameObjectWithTag("Templates").GetComponent<Templates>().randomFloorTile,20);
+        for (int x=0 ; x<roomsData.GetComponent<RoomsData>().positions.Count;x++ )
+        this.roomsData.GetComponent<RoomsData>().SpawnStuffsNoRotation(roomsData.GetComponent<RoomsData>().positions[x],GameObject.FindGameObjectWithTag("Templates").GetComponent<Templates>().enemyArray,10);
     }
 }

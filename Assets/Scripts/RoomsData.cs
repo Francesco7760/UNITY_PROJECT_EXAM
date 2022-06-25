@@ -320,23 +320,27 @@ public class RoomsData : MonoBehaviour
     public void SpawnStuffs(Vector2 roomCenterPosition, GameObject[] objArray, int spawnPercentage)
     {
         this.wait(3);
-        for (int n=-4;n<4;n++)
+        for (int n=-3;n<3;n++)
         {
-            for(int m=-4;m<4;m++)
+            for(int m=-3;m<3;m++)
             {
-                if (n==4||n==-4||m==4||m==-4)
+                if (Random.Range(0,100)>100-spawnPercentage)
                 {
-
-                
-                    if (Random.Range(0,100)>100-spawnPercentage)
-                    {
-                        Instantiate(objArray[Random.Range(0,objArray.Length)],new Vector2(roomCenterPosition.x+n,roomCenterPosition.y+m),Quaternion.Euler(0,0,Random.Range(0,360)));
-                    }
-                else
-                    if (Random.Range(0,100)>100-spawnPercentage)
-                    {
-                        Instantiate(objArray[Random.Range(0,objArray.Length)],new Vector2(roomCenterPosition.x+n+Random.Range(-0.2f,0.2f),roomCenterPosition.y+m+Random.Range(-0.2f,0.2f)),Quaternion.Euler(0,0,Random.Range(0,360)));
-                    }
+                    Instantiate(objArray[Random.Range(0,objArray.Length)],new Vector2(roomCenterPosition.x+n+Random.Range(-0.2f,0.2f),roomCenterPosition.y+m+Random.Range(-0.2f,0.2f)),Quaternion.Euler(0,0,Random.Range(0,360)));
+                }
+            }
+        }
+    }
+    public void SpawnStuffsNoRotation(Vector2 roomCenterPosition, GameObject[] objArray, int spawnPercentage)
+    {
+        this.wait(3);
+        for (int n=-3;n<3;n++)
+        {
+            for(int m=-3;m<3;m++)
+            {
+                if (Random.Range(0,100)>100-spawnPercentage)
+                {
+                    Instantiate(objArray[Random.Range(0,objArray.Length)],new Vector2(roomCenterPosition.x+n+Random.Range(-0.2f,0.2f),roomCenterPosition.y+m+Random.Range(-0.2f,0.2f)),Quaternion.identity);
                 }
             }
         }

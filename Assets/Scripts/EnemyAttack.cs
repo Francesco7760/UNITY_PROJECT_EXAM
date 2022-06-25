@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
      void attack(){
-            //animator.SetTrigger("Attack");
+            animator.SetTrigger("Attack");
             Collider2D[] hitplayer =  Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
             foreach(Collider2D player in hitplayer){
                 player.GetComponent<PlayerManager>().takeDamage(attackDamamge);

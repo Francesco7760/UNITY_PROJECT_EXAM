@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public Animator animator;
+    public Rigidbody2D rb;
     private InputController _inputActions;
     public float speed = 2;
     public int maxHealth = 100;
@@ -34,9 +35,34 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-       moveRightLeft();
-       moveUp();
-       moveDown();
+       //moveRightLeft();
+       //moveUp();
+       //moveDown();
+       Move();
+    }
+    void Move(){
+
+        Vector2 direction = new Vector2(_inputActions.InputAction.RightLeft.ReadValue<float>(),_inputActions.InputAction.Up.ReadValue<float>()-_inputActions.InputAction.Down.ReadValue<float>());
+        if(!(direction==Vector2.zero))
+        {
+        animator.SetFloat("xDir", _inputActions.InputAction.RightLeft.ReadValue<float>());
+        animator.SetFloat("yDir", _inputActions.InputAction.Up.ReadValue<float>()-_inputActions.InputAction.Down.ReadValue<float>());
+        }
+        animator.SetFloat("moveSpeed", direction.sqrMagnitude);
+        
+        float dash = _inputActions.InputAction.Dash.ReadValue<float>();
+        if(dash > 0)
+        {
+            transform.Translate(Vector2.up * speed * 1.5f * Time.deltaTime * (_inputActions.InputAction.Up.ReadValue<float>()));
+            transform.Translate(Vector2.down * speed * 1.5f * Time.deltaTime * (_inputActions.InputAction.Down.ReadValue<float>()));
+            transform.Translate(Vector2.right * speed * 1.5f * Time.deltaTime * _inputActions.InputAction.RightLeft.ReadValue<float>());
+        }
+        else
+        {
+            transform.Translate(Vector2.up * speed * Time.deltaTime * (_inputActions.InputAction.Up.ReadValue<float>()));
+            transform.Translate(Vector2.down * speed * Time.deltaTime * (_inputActions.InputAction.Down.ReadValue<float>()));
+            transform.Translate(Vector2.right * speed * Time.deltaTime * _inputActions.InputAction.RightLeft.ReadValue<float>());
+        }
     }
     void moveRightLeft(){
         

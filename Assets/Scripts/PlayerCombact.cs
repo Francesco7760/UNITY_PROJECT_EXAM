@@ -6,10 +6,12 @@ public class PlayerCombact : MonoBehaviour
 {
     public Animator animator;
     public Transform attackPoint;
+    public Transform playerPosition;
     public float attackRange = 0.5f;
     public int attackDamage = 20;
     public LayerMask enemyLayers;
     private InputController _inputController;
+    public Collider2D[] hitEnemy;
     void Awake(){
         _inputController = new InputController();
     }
@@ -26,11 +28,23 @@ public class PlayerCombact : MonoBehaviour
         _inputController.InputAction.Attack.performed += ctx => attack();
     }
     void attack(){
-        float attackInput = _inputController.InputAction.Attack.ReadValue<float>();
+        //float attackInput = _inputController.InputAction.Attack.ReadValue<float>();
         //attack animations
-        animator.SetFloat("Attack", attackInput);
+        animator.SetTrigger("Attack");
         // detect enemies to attack
-        Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        if(animator.GetFloat("xDir")==1){
+            this.hitEnemy = Physics2D.OverlapCircleAll(new Vector2 (playerPosition.position.x+attackRange,playerPosition.position.y), attackRange, enemyLayers);
+            }
+        if(animator.GetFloat("xDir")==-1){
+            this.hitEnemy = Physics2D.OverlapCircleAll(new Vector2 (playerPosition.position.x-attackRange,playerPosition.position.y), attackRange, enemyLayers);
+        }
+        if(animator.GetFloat("yDir")==1){
+            this.hitEnemy = Physics2D.OverlapCircleAll(new Vector2 (playerPosition.position.x,playerPosition.position.y+attackRange), attackRange, enemyLayers);
+        }
+        if(animator.GetFloat("yDir")==-1){
+            this.hitEnemy = Physics2D.OverlapCircleAll(new Vector2 (playerPosition.position.x,playerPosition.position.y-attackRange), attackRange, enemyLayers);
+        }
+
         foreach(Collider2D enemy in hitEnemy){
             Debug.Log("attaccato" + enemy.name);
             enemy.GetComponent<EnemyManager>().takeDamage(attackDamage);
