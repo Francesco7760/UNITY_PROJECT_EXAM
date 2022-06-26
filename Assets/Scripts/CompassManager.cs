@@ -21,6 +21,6 @@ public class CompassManager : MonoBehaviour
     {
         Vector3 directionExit = player.position - exit.position;
         float angle = Mathf.Atan2(directionExit.x, directionExit.y) * Mathf.Rad2Deg;
-        compass.rectTransform.rotation = Quaternion.Euler(0f,0f,- 2*angle);
+        compass.rectTransform.rotation = Quaternion.Euler(0f,0f, -angle-180);
     }
 }
