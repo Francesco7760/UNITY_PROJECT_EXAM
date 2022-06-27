@@ -48,6 +48,7 @@ public class PlayerCombact : MonoBehaviour
         foreach(Collider2D enemy in hitEnemy){
             Debug.Log("attaccato" + enemy.name);
             enemy.GetComponent<EnemyManager>().takeDamage(attackDamage);
+            Instantiate(Resources.Load("SlashBlood",typeof(GameObject)),enemy.transform.position,Quaternion.Euler(0,0,Random.Range(0,360)));
         }
         //damage enemy
     }

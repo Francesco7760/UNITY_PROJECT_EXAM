@@ -17,4 +17,5 @@ public class Templates : MonoBehaviour
     public GameObject[] SmallEnemyArray;
     public GameObject[] MediumEnemyArray;
     public GameObject[] LargeEnemyArray;
+    public GameObject[] powerUp;
 }
