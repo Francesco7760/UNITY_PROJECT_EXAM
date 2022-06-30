@@ -130,23 +130,29 @@ public class PlayerManager : MonoBehaviour
             if(currentHealth + 10 < maxHealth){
                 other.gameObject.SetActive(false);
                 ScoreScript.instance.addPointFood();
-                currentHealth += 10;}
+                currentHealth += 10;
+                SoundManagerScriptOther.PlaySound("clic");
+            }
         }
         else if (other.tag == "Soda")    
         {
             Debug.Log("soda trigger");
             other.gameObject.SetActive(false);
             ScoreScript.instance.addPointSoda();
+            SoundManagerScriptOther.PlaySound("clic");
             // update attack score
         }
         else if(other.tag == "Life"){ //se incontro la Life, aumenta la vita di 20
             if(currentHealth + 20 < maxHealth){
                 other.gameObject.SetActive(false);
-                currentHealth += 20;}
+                currentHealth += 20;
+                SoundManagerScriptOther.PlaySound("collecting");
+            }
         }
         else if(other.tag == "Money"){
             money += 1;
             other.gameObject.SetActive(false);
+            SoundManagerScriptOther.PlaySound("clic");
         }
     }                  
 
