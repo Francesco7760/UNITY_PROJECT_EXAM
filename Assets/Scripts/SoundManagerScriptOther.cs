@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScriptOther : MonoBehaviour
 {
-    public static AudioClip clicSound, mouseclicSound, collectingSound;
+    public static AudioClip clicSound, mouseclicSound, collectingSound, swordSound;
     static AudioSource audioSrc;
 
     void Start()
@@ -12,6 +12,7 @@ public class SoundManagerScriptOther : MonoBehaviour
         clicSound = Resources.Load<AudioClip>("clic");
         mouseclicSound = Resources.Load<AudioClip>("mouseclic");
         collectingSound = Resources.Load<AudioClip>("collecting");
+        swordSound = Resources.Load<AudioClip>("sword");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -28,6 +29,9 @@ public class SoundManagerScriptOther : MonoBehaviour
                 break;
             case "collecting":
                 audioSrc.PlayOneShot(collectingSound);
+                break;
+            case "sword":
+                audioSrc.PlayOneShot(swordSound);
                 break;
         }
     }

@@ -31,8 +31,9 @@ public class PlayerCombact : MonoBehaviour
         //float attackInput = _inputController.InputAction.Attack.ReadValue<float>();
         //attack animations
         animator.SetTrigger("Attack");
+        SoundManagerScriptOther.PlaySound("sword");
         // detect enemies to attack
-        if(animator.GetFloat("xDir")==1){
+        if (animator.GetFloat("xDir")==1){
             this.hitEnemy = Physics2D.OverlapCircleAll(new Vector2 (playerPosition.position.x+attackRange,playerPosition.position.y), attackRange, enemyLayers);
             }
         if(animator.GetFloat("xDir")==-1){
