@@ -11,7 +11,7 @@ public class RoomsData : MonoBehaviour
     public List<GameObject> roomsArray;
     public List<int[]> roomsDoors = new List<int[]>();
     public List<GameObject> enemyArray;
-    public int level;
+
     public int roomsCount=0;
     public int roomsCountTop;
     public int roomsCountRight;
@@ -20,15 +20,13 @@ public class RoomsData : MonoBehaviour
     public int xlimit;
     public int ylimit;
     public bool stopGeneration=false;
+    public int spawnedEnemyNumber;
 
     public void Init(int xlimit, int ylimit){
         this.xlimit=xlimit*10;
         this.ylimit=ylimit*10;
     }
 
-    public void setLevel(int level){
-        this.level=level;
-    }
     IEnumerator WaitDummyCoroutine(int seconds)
     {
 
@@ -320,9 +318,9 @@ public class RoomsData : MonoBehaviour
     public void SpawnStuffs(Vector2 roomCenterPosition, GameObject[] objArray, int spawnPercentage)
     {
         this.wait(3);
-        for (int n=-3;n<3;n++)
+        for (int n=-3;n<4;n++)
         {
-            for(int m=-3;m<3;m++)
+            for(int m=-3;m<4;m++)
             {
                 if (Random.Range(0,100)>100-spawnPercentage)
                 {
@@ -334,9 +332,9 @@ public class RoomsData : MonoBehaviour
     public void SpawnStuffsNoRotation(Vector2 roomCenterPosition, GameObject[] objArray, int spawnPercentage)
     {
         this.wait(3);
-        for (int n=-3;n<3;n++)
+        for (int n=-3;n<4;n++)
         {
-            for(int m=-3;m<3;m++)
+            for(int m=-3;m<4;m++)
             {
                 if (Random.Range(0,100)>100-spawnPercentage)
                 {

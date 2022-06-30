@@ -23,6 +23,11 @@ TagManager:
   - HighScore
   - Exit
   - Compass
+  - MapManager
+  - Floor
+  - SlashBlood
+  - Wall
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

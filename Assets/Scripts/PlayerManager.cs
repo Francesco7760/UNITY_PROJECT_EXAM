@@ -116,7 +116,8 @@ public class PlayerManager : MonoBehaviour
     void die(){
             GetComponent<Collider2D>().enabled = false; 
             this.gameObject.SetActive(false);
-                    }
+
+    }
     private void OnTriggerEnter2D(Collider2D other){
         if (other.tag == "Exit")     //se incontro l'EXIT, allora cambia livello (con un delay di 1 secondo)
         {

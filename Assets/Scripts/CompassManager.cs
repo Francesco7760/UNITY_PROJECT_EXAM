@@ -17,10 +17,13 @@ public class CompassManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// 
+    
+    /*void Update()
     {
-        Vector3 directionExit = player.position - exit.position;
+        Vector3 directionExit = player.position - new Vector3(0f, 0f, 0f);
         float angle = Mathf.Atan2(directionExit.x, directionExit.y) * Mathf.Rad2Deg;
         compass.rectTransform.rotation = Quaternion.Euler(0f,0f, -angle-180);
-    }
+    } */
 }
