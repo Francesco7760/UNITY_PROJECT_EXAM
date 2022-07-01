@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class GOMenu : MonoBehaviour
 {
-    public void StartGame()
+    public void Restart()
     {
         SceneManager.LoadScene("ScenaMappa");
     }
-    public void ExitGame()
+    public void Quit()
     {
-        Application.Quit();
-        Debug.Log("Sto chiudendo il gioco...");
+        SceneManager.LoadScene("MainMenu");
     }
 }

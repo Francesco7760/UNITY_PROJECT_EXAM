@@ -5,20 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Menu.unity
-    guid: e18e94edf0655d84aacb9a4b0ff72a92
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: ab4d467cc76e6334a979f249c858aa73
   - enabled: 1
     path: Assets/Scenes/ScenaMappa.unity
     guid: 649dd96fb0b523047921a1f167a70010
-  - enabled: 0
-    path: Assets/Scenes/PauseMenu.unity
-    guid: 86d7acc6e5df2a54fb9c258fb86ad033
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 4989ad71b0897ad439e375123ddd16f8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 857924c524aa30248858751fd5f01e40, type: 2}

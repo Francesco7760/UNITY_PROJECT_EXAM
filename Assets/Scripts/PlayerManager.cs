@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     public Animator animator;
@@ -114,9 +115,9 @@ public class PlayerManager : MonoBehaviour
             }
         }
     void die(){
-            GetComponent<Collider2D>().enabled = false; 
-            this.gameObject.SetActive(false);
-
+        GetComponent<Collider2D>().enabled = false; 
+        this.gameObject.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
     private void OnTriggerEnter2D(Collider2D other){
         if (other.tag == "Exit")     //se incontro l'EXIT, allora cambia livello (con un delay di 1 secondo)
