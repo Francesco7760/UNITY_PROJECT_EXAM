@@ -122,7 +122,8 @@ public class PlayerManager : MonoBehaviour
         if (other.tag == "Exit")     //se incontro l'EXIT, allora cambia livello (con un delay di 1 secondo)
         {
            Debug.Log("exit trigger");
-           //SceneManager.LoadScene("SampleScene2");
+           SoundManagerScriptOther.PlaySound("lvlup");
+            //SceneManager.LoadScene("SampleScene2");
         }
         else if (other.tag == "Food")    //se incontro il FOOD, aumenta la vita di 10
         {
