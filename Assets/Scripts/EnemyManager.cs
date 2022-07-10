@@ -82,6 +82,7 @@ public class EnemyManager : MonoBehaviour
             if(currentHealth <= 0){
                 die();
                 ScoreScript.instance.addPoint();
+                ScoreScript.instance.countKill();
             }
         }
         void die(){

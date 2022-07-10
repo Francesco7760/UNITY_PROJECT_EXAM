@@ -201,9 +201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5175758759737120732}
+  rb: {fileID: 0}
   speed: 2
   maxHealth: 100
   currentHealth: 0
+  money: 0
 --- !u!114 &5175758759737120726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,8 +220,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5175758759737120732}
   attackPoint: {fileID: 5175758759088431767}
+  playerPosition: {fileID: 0}
   attackRange: 0.5
   attackDamage: 20
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
+  hitEnemy: []

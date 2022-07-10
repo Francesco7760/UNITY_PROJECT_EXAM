@@ -28,6 +28,7 @@ TagManager:
   - SlashBlood
   - Wall
   - PauseMenu
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -154,6 +154,7 @@ public class PlayerManager : MonoBehaviour
         else if(other.tag == "Money"){
             money += 1;
             other.gameObject.SetActive(false);
+            ScoreScript.instance.addMoney();
             SoundManagerScriptOther.PlaySound("clic");
         }
     }                  

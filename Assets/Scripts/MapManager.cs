@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    public static MapManager instance;
     private GameObject roomsData;
     private GameObject templates;
     public int level;
-    private GameObject[] enemySpawned;
+    private GameObject[] enemySpawned1;
+    private GameObject[] enemySpawned2;
     public bool levelFinish=false;
     private Vector2[] positions= {new Vector2( 0, 0 )};
-    public int countEnemy=0;
+    public int countEnemy1=0;
+    public int countEnemy2=0;
     public bool spawned=false;
     // Start is called before the first frame update
+    void Awake(){
+        instance = this;
+    }
     void Start()
     {
         this.level=1;
@@ -45,17 +51,27 @@ public class MapManager : MonoBehaviour
     {
         if (this.levelFinish==false)
         {
-            this.enemySpawned=GameObject.FindGameObjectsWithTag("Enemy1");
-            this.countEnemy=0;
-            foreach(GameObject gameobj in this.enemySpawned)
+            this.enemySpawned1=GameObject.FindGameObjectsWithTag("Enemy1");
+            this.countEnemy1=0;
+            foreach(GameObject gameobj in this.enemySpawned1)
             {
                 if(gameobj.active)
                 {
 
-                    this.countEnemy=this.countEnemy+1;
+                    this.countEnemy1=this.countEnemy1+1;
                 }
             }
-            if(this.countEnemy==0)
+            this.enemySpawned2=GameObject.FindGameObjectsWithTag("Enemy2");
+            this.countEnemy2=0;
+            foreach(GameObject gameobj in this.enemySpawned2)
+            {
+                if(gameobj.active)
+                {
+
+                    this.countEnemy2=this.countEnemy2+1;
+                }
+            }
+            if(this.countEnemy1 + this.countEnemy2 ==0)
             {
                 print("ioDovreiInstanziare");
                 Instantiate(Resources.Load("Exit",typeof(GameObject)),new Vector2(0,0),Quaternion.identity);
@@ -84,5 +100,8 @@ public class MapManager : MonoBehaviour
         this.spawned=true;
         for (int x=0 ; x<roomsData.GetComponent<RoomsData>().positions.Count;x++ )
         this.roomsData.GetComponent<RoomsData>().SpawnStuffsNoRotation(roomsData.GetComponent<RoomsData>().positions[x],GameObject.FindGameObjectWithTag("Templates").GetComponent<Templates>().powerUp,15);
+    }
+    public int countFinaleKill(){
+        return countEnemy1 + countEnemy2;
     }
 }
