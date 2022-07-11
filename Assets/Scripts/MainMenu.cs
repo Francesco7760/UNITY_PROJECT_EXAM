@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    /*public void StartGame()
     {
         SceneManager.LoadScene("ScenaMappa");
-    }
+    }*/
     public void ExitGame()
     {
         Application.Quit();
