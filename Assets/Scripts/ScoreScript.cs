@@ -36,7 +36,7 @@ public class ScoreScript : MonoBehaviour
     {
         kill = MapManager.instance.countFinaleKill();
         if(kill > 0){
-            killText.text = kill.ToString() + " KILL";
+            killText.text = kill.ToString() + " ENEMIES";
         }else{
             killText.text = "GO EXIT";
         }
