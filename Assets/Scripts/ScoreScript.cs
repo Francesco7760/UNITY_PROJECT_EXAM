@@ -14,9 +14,9 @@ public class ScoreScript : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public int scoreToAdd;
 
-    int score = 0;
+    public int score = 0;
     int highscore = 0;
-    int money = 0;
+    public int money = 0;
     int kill;
     
     void Awake(){

@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("ScenaMappa");
     }
+
     public void ExitGame()
     {
         Application.Quit();
