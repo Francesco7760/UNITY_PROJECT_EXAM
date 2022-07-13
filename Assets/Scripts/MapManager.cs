@@ -104,4 +104,5 @@ public class MapManager : MonoBehaviour
     public int countFinaleKill(){
         return countEnemy1 + countEnemy2;
     }
+    
 }

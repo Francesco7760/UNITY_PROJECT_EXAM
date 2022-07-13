@@ -12,11 +12,13 @@ public class ScoreScript : MonoBehaviour
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI killText;
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI levelText;
     public int scoreToAdd;
 
     public int score = 0;
     int highscore = 0;
     public int money = 0;
+    int level;
     int kill;
     
     void Awake(){
@@ -30,6 +32,8 @@ public class ScoreScript : MonoBehaviour
         highScoreText.text = "HIGHSCORE " + highscore.ToString();
 
         moneyText.text = money.ToString() + " MONEY";
+
+        levelText.text = "LEVEL " + level;
     }
 
     void Update()
@@ -40,7 +44,8 @@ public class ScoreScript : MonoBehaviour
         }else{
             killText.text = "GO EXIT";
         }
-        
+
+        levelText.text = "LEVEL " + MapManager.instance.level;
     }
     public void addPoint(){
         score += 11;
