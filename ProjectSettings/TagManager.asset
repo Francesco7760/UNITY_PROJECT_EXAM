@@ -29,6 +29,8 @@ TagManager:
   - Wall
   - PauseMenu
   - Enemy
+  - AttackUP
+  - DefenseUP
   layers:
   - Default
   - TransparentFX

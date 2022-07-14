@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    public static EnemyAttack instance;
     Transform player;
     public Animator animator;
     public Transform attackPoint;
@@ -38,4 +39,9 @@ public class EnemyAttack : MonoBehaviour
                 player.GetComponent<PlayerManager>().takeDamage(attackDamamge);
             }
      }
+
+    public void defUP()
+    {
+        attackDamamge -= 1;
+    }
 }

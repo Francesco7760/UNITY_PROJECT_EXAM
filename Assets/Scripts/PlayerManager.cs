@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
     Image healthBar;
     float barWidth, barHeight;
     float healthCurrentBar;
+    int atkUP = PlayerCombact.instance.attackDamage;
+    int defUP = EnemyAttack.instance.attackDamamge;
     void Awake(){
         _inputActions = new InputController();
     }
@@ -135,6 +137,20 @@ public class PlayerManager : MonoBehaviour
                 currentHealth += 10;
                 SoundManagerScriptOther.PlaySound("clic");
             }
+        }
+        else if (other.tag == "AttackUP")    //se incontro la spada, aumenta l'attacco
+        {
+            Debug.Log("attackup trigger");
+            other.gameObject.SetActive(false);
+            atkUP += 5;
+            SoundManagerScriptOther.PlaySound("attack");
+        }
+        else if (other.tag == "DefenseUP")    //se incontro lo scettro, aumenta la difesa
+        {
+            Debug.Log("defenseup trigger");
+            other.gameObject.SetActive(false);
+            defUP -= 2;
+            SoundManagerScriptOther.PlaySound("defense");
         }
         else if (other.tag == "Soda")    
         {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombact : MonoBehaviour
 {
+    public static PlayerCombact instance;
     public Animator animator;
     public Transform attackPoint;
     public Transform playerPosition;
@@ -27,6 +28,8 @@ public class PlayerCombact : MonoBehaviour
     {
         _inputController.InputAction.Attack.performed += ctx => attack();
     }
+
+
     void attack(){
         //float attackInput = _inputController.InputAction.Attack.ReadValue<float>();
         //attack animations
