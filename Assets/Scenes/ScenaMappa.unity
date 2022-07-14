@@ -2317,10 +2317,12 @@ MonoBehaviour:
   - {fileID: 6405390862643992940, guid: a500610bbb4d536488c8be71190edab9, type: 3}
   - {fileID: 6405390862643992940, guid: 65a9058dd7ba98a4ebefb9631611a174, type: 3}
   powerUp:
-  - {fileID: 7842388327248021622, guid: dbf6a9221be59344c8a6900f56e3891a, type: 3}
-  - {fileID: 6854162053828383764, guid: 4a913650f28ac0d45837df898e42c8c7, type: 3}
   - {fileID: 620547260734211285, guid: a0e6692f9eaecdd45ba6d8f3058932eb, type: 3}
+  - {fileID: 6854162053828383764, guid: 4a913650f28ac0d45837df898e42c8c7, type: 3}
+  - {fileID: 7842388327248021622, guid: dbf6a9221be59344c8a6900f56e3891a, type: 3}
   - {fileID: 6469277639091423800, guid: d48eb3976ba1bff48b5295fd6eb3c55f, type: 3}
+  - {fileID: 7234739516498224155, guid: 0724df106318efa4f9db58c5e80dbe60, type: 3}
+  - {fileID: 7554959280066336033, guid: 4d1b4c3a63b9b074a84db8ec8eb7941f, type: 3}
 --- !u!4 &2031725646
 Transform:
   m_ObjectHideFlags: 0

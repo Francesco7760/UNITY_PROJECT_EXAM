@@ -99,7 +99,7 @@ public class MapManager : MonoBehaviour
         this.roomsData.GetComponent<RoomsData>().SpawnStuffsNoRotation(roomsData.GetComponent<RoomsData>().positions[x],GameObject.FindGameObjectWithTag("Templates").GetComponent<Templates>().enemyArray,5);
         this.spawned=true;
         for (int x=0 ; x<roomsData.GetComponent<RoomsData>().positions.Count;x++ )
-        this.roomsData.GetComponent<RoomsData>().SpawnStuffsNoRotation(roomsData.GetComponent<RoomsData>().positions[x],GameObject.FindGameObjectWithTag("Templates").GetComponent<Templates>().powerUp,15);
+        this.roomsData.GetComponent<RoomsData>().SpawnStuffsNoRotation(roomsData.GetComponent<RoomsData>().positions[x],GameObject.FindGameObjectWithTag("Templates").GetComponent<Templates>().powerUp,10);
     }
     public int countFinaleKill(){
         return countEnemy1 + countEnemy2;
