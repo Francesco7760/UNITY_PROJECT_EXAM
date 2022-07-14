@@ -146,8 +146,8 @@ public class PlayerManager : MonoBehaviour
         }
         else if(other.tag == "Life"){ //se incontro la Life, aumenta la vita di 20
             if(currentHealth + 20 < maxHealth){
-                other.gameObject.SetActive(false);
                 currentHealth += 20;
+                other.gameObject.SetActive(false);
                 SoundManagerScriptOther.PlaySound("collecting");
             }
         }

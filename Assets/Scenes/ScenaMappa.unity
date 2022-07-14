@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -225,7 +226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214.9, y: 148.3}
+  m_AnchoredPosition: {x: 203.8, y: 151}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155269937
@@ -811,6 +812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 45
+  enemySpawned1: []
+  enemySpawned2: []
   levelFinish: 0
   countEnemy1: 0
   countEnemy2: 0
@@ -1042,7 +1045,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869505837}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 370958a0ef4192442b74aef3b25ee8f8, type: 3}
   m_Name: 
@@ -1660,7 +1663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214.8, y: 177.9}
+  m_AnchoredPosition: {x: 203.8, y: 177.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376861615
@@ -1787,7 +1790,7 @@ RectTransform:
   m_GameObject: {fileID: 1396912544}
   m_LocalRotation: {x: -0.0024192866, y: 0.0075499103, z: -0.37887293, w: 0.9254148}
   m_LocalPosition: {x: 0, y: 0, z: -1.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 869505842}
@@ -1795,7 +1798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.071, y: 0.906, z: -44.529}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 359, y: 177.9}
+  m_AnchoredPosition: {x: 318.7, y: 174.4}
   m_SizeDelta: {x: 26.4089, y: 68.9122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396912546

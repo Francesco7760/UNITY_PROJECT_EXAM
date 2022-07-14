@@ -8,8 +8,8 @@ public class MapManager : MonoBehaviour
     private GameObject roomsData;
     private GameObject templates;
     public int level;
-    private GameObject[] enemySpawned1;
-    private GameObject[] enemySpawned2;
+    public GameObject[] enemySpawned1;
+    public GameObject[] enemySpawned2;
     public bool levelFinish=false;
     private Vector2[] positions= {new Vector2( 0, 0 )};
     public int countEnemy1=0;
@@ -104,5 +104,10 @@ public class MapManager : MonoBehaviour
     public int countFinaleKill(){
         return countEnemy1 + countEnemy2;
     }
-    
+    public GameObject[] whoIsSpawnEnemy1(){
+        return enemySpawned1;
+    }
+     public GameObject[] whoIsSpawnEnemy2(){
+        return enemySpawned2;
+    }
 }
